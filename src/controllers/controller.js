@@ -18,7 +18,16 @@ const controller = (() => {
   const getCurrentProject = () => currentProject;
   const getAllProjects = () => allProjects;
 
-  return { getCurrentProject, getAllProjects, addNewProject, changeCurrentProject };
+  const addNewItem = (title) => {
+    const item = itemFactory(title);
+    currentProject.addItem(item);
+  };
+
+  const removeItem = (item) => {
+    currentProject.removeItem(item);
+  };
+
+  return { getCurrentProject, getAllProjects, addNewProject, changeCurrentProject, addNewItem, removeItem };
 })();
 
 export default controller;
