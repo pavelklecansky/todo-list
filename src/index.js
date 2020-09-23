@@ -1,2 +1,3 @@
-import itemFactory from "./models/item";
+import domController from "./dom/domController";
 
+domController.render();

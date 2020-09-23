@@ -5,7 +5,16 @@ const controller = (() => {
   let currentProject = projectFactory("Quick tasks");
   const allProjects = [currentProject];
 
-  const changeCurrentProject = (index) => {
+  const addFakeData = () => {
+    addNewItem("test");
+    addNewItem("test2");
+  };
+
+  const changeCurrentProject = (project) => {
+    currentProject = project;
+  };
+
+  const changeCurrentProjectByIndex = (index) => {
     const project = allProjects[index];
     currentProject = project;
   };
@@ -27,7 +36,16 @@ const controller = (() => {
     currentProject.removeItem(item);
   };
 
-  return { getCurrentProject, getAllProjects, addNewProject, changeCurrentProject, addNewItem, removeItem };
+  return {
+    getCurrentProject,
+    getAllProjects,
+    addNewProject,
+    changeCurrentProject,
+    addNewItem,
+    removeItem,
+    addFakeData,
+    changeCurrentProjectByIndex,
+  };
 })();
 
 export default controller;
