@@ -21,7 +21,37 @@ const projectFactory = (title) => {
     items.splice(index, 1);
   };
 
-  return { getTitle, setTitle, addItem, getItems, getItemByIndex, removeItem, removeItemByIndex };
+  return { items, title, getTitle, setTitle, addItem, getItems, getItemByIndex, removeItem, removeItemByIndex };
 };
 
-export default projectFactory;
+const projectMethods = {
+  getTitle() {
+    return this.title;
+  },
+
+  setTitle(title) {
+    this.title = title;
+  },
+  addItem(item) {
+    this.items.push(item);
+  },
+
+  getItems() {
+    return this.items;
+  },
+
+  getItemByIndex(index) {
+    return this.items[index];
+  },
+
+  removeItem(item) {
+    let index = this.items.indexOf(item);
+    this.items.splice(index, 1);
+  },
+
+  removeItemByIndex(index) {
+    this.items.splice(index, 1);
+  },
+};
+
+export { projectFactory, projectMethods };

@@ -1,14 +1,17 @@
 const itemFactory = (title) => {
-  const createDate = Date.now();
-  let completed = false;
-
   const getTitle = () => title;
   const setTitle = (newTitle) => (title = newTitle);
-  const getCreateDate = () => createDate;
-  const isCompleted = () => completed;
-  const setCompleted = (state) => (completed = state);
 
-  return { getTitle, setTitle, getCreateDate, isCompleted, setCompleted };
+  return { title, getTitle, setTitle };
 };
 
-export default itemFactory;
+const itemMethods = {
+  getTitle() {
+    return this.title;
+  },
+  setTitle(title) {
+    this.title = title;
+  },
+};
+
+export { itemFactory, itemMethods };

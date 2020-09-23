@@ -99,7 +99,6 @@ const domController = (() => {
   };
 
   const render = () => {
-    controller.addFakeData();
     addEventListeners();
     createLeftColumn();
     createCentralColumn();
